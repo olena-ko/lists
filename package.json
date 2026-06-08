@@ -10,7 +10,8 @@
     "format": "biome format --write",
     "preview": "rsbuild preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test": "vitest"
   },
   "dependencies": {
     "@radix-ui/themes": "^3.3.0",
@@ -26,6 +27,7 @@
     "@types/react-dom": "^19.2.3",
     "storybook": "^10.4.2",
     "storybook-react-rsbuild": "^3.3.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
   }
 }
