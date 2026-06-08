@@ -13,6 +13,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@radix-ui/themes": "^3.3.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
@@ -20,11 +21,11 @@
     "@biomejs/biome": "2.4.15",
     "@rsbuild/core": "^2.0.9",
     "@rsbuild/plugin-react": "^2.0.1",
+    "@storybook/addon-docs": "^10.4.2",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^6.0.3",
     "storybook": "^10.4.2",
     "storybook-react-rsbuild": "^3.3.4",
-    "@storybook/addon-docs": "^10.4.2"
+    "typescript": "^6.0.3"
   }
 }
