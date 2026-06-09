@@ -1,0 +1,58 @@
+import type {IListItem} from "../types/ListItem.ts";
+import {
+    Box,
+    Button,
+    Card,
+    Checkbox,
+    Flex,
+    IconButton,
+    Separator,
+    Text
+} from "@radix-ui/themes";
+import {CaretDownIcon, CaretUpIcon, TrashIcon} from "@radix-ui/react-icons";
+import {useState} from "react";
+
+export const ListItem = (props: {
+                             list: IListItem,
+                             deleteList: (id: string) => void
+                         }
+) => {
+    const {id, name, elements} = props.list
+    const [isOpened, setIsOpened] = useState(false);
+    const toggleCard = () => {
+        setIsOpened((prev) => !prev)
+    }
+
+    const onDelete = () => {
+        props.deleteList(id)
+    }
+
+    return <Card>
+        <Flex gap={'2'} align={'center'} p={'1'}>
+            <IconButton onClick={toggleCard} variant={'ghost'} size={'1'}
+                        color={'gray'}>
+                {isOpened ? <CaretUpIcon/> :
+                    <CaretDownIcon/>}
+            </IconButton>
+            <Flex flexGrow={'1'}><Text>{name}</Text></Flex>
+            <Button color={'crimson'} variant={'soft'}
+                    size='1'
+                    type={'button'}
+                    onClick={onDelete}
+            >
+                <TrashIcon width="15" height="15"/>
+                <Text>Delete</Text>
+            </Button>
+        </Flex>
+        {isOpened && <Box>
+            <Separator size={'4'} my={'3'}/>
+
+            {elements.map(element => {
+                return <Flex
+                    key={element} gap={'2'} p={'1'} align={'center'}>
+                    <Checkbox/>
+                    <Text>{element}</Text>
+                </Flex>
+            })}</Box>}
+    </Card>
+}
