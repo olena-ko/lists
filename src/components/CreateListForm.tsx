@@ -90,8 +90,7 @@ export const CreateListForm = (props: {
 
             <Separator my={'2'} size={'4'}/>
             <Flex justify={'center'} gap={'1'}>
-                <Button onClick={onSaveList} color={'plum'}>Save
-                    list</Button>
+                <Button onClick={onSaveList} color={'plum'}>Save list</Button>
                 <Button onClick={props.hideForm} color={'gray'}
                         variant={'soft'}>Cancel</Button>
             </Flex>
