@@ -17,3 +17,7 @@ dist/
 
 *storybook.log
 storybook-static
+
+# DOCS
+/docs/notes.txt
+
