@@ -17,11 +17,11 @@ import {
     useRef,
     useState
 } from "react";
-import type {IListItem} from "../../types/ListItem.ts";
+import type {ListItem} from "../../../types";
 import {type ValidationErrorKey, validationErrors} from "./validationErrors.ts";
 
 export const CreateListForm = (props: {
-    addNewList: (newList: IListItem) => void
+    addNewList: (newList: ListItem) => void
     hideForm: () => void
 }) => {
     const [name, setName] = useState('')
@@ -30,7 +30,7 @@ export const CreateListForm = (props: {
     const isValidForm = useRef(true)
     const [newElementName, setNewElementName] = useState('')
 
-    const onChangeName = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value.trim())
     }
 
@@ -117,7 +117,7 @@ export const CreateListForm = (props: {
             {errorsBlock}
 
             <TextField.Root placeholder="List name" value={name}
-                            onChange={onChangeName}
+                            onChange={handleChangeName}
                             variant={'classic'}>
             </TextField.Root>
 

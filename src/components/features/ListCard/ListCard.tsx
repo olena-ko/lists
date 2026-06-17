@@ -1,4 +1,3 @@
-import type {IListItem} from "../types/ListItem.ts";
 import {
     Box,
     Button,
@@ -11,9 +10,10 @@ import {
 } from "@radix-ui/themes";
 import {CaretDownIcon, CaretUpIcon, TrashIcon} from "@radix-ui/react-icons";
 import {useState} from "react";
+import type {ListItem} from "../../../types";
 
-export const ListItem = (props: {
-                             list: IListItem,
+export const ListCard = (props: {
+                             list: ListItem,
                              deleteList: (id: string) => void
                          }
 ) => {
@@ -23,7 +23,7 @@ export const ListItem = (props: {
         setIsOpened((prev) => !prev)
     }
 
-    const onDelete = () => {
+    const handleDelete = () => {
         props.deleteList(id)
     }
 
@@ -38,7 +38,7 @@ export const ListItem = (props: {
             <Button color={'crimson'} variant={'soft'}
                     size='1'
                     type={'button'}
-                    onClick={onDelete}
+                    onClick={handleDelete}
             >
                 <TrashIcon width="15" height="15"/>
                 <Text>Delete</Text>
