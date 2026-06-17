@@ -1,9 +1,9 @@
-import type {ListItem} from "../../../types";
+import type {List} from "../../../types";
 import {ListCard} from "../ListCard";
 import {Flex} from "@radix-ui/themes";
 
 export const ListCollection = (props: {
-    data: ListItem[],
+    data: List[],
     deleteList: (id: string) => void
 }) => {
     const {data, deleteList} = props;

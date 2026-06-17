@@ -1,13 +1,13 @@
 import {useState} from "react";
 import {Box, Button, Container, Flex,} from "@radix-ui/themes";
 import {PlusIcon} from "@radix-ui/react-icons";
-import type {ListItem} from "../../../types";
+import type {List} from "../../../types";
 import {CreateListForm} from "../../features/CreateListForm";
 import {Header} from "../Header";
 import {ListCollection} from "../../features/ListCollection";
 
 const MainLayout = () => {
-    const [lists, setLists] = useState<ListItem[]>([])
+    const [lists, setLists] = useState<List[]>([])
     const [isFormHidden, setIsFormHidden] = useState(!!lists.length)
 
     const hideForm = () => {
@@ -18,7 +18,7 @@ const MainLayout = () => {
         setIsFormHidden(false)
     }
 
-    const addList = (newList: ListItem) => {
+    const addList = (newList: List) => {
         setLists([...lists, newList])
         hideForm()
     }

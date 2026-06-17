@@ -10,14 +10,14 @@ import {
 } from "@radix-ui/themes";
 import {CaretDownIcon, CaretUpIcon, TrashIcon} from "@radix-ui/react-icons";
 import {useState} from "react";
-import type {ListItem} from "../../../types";
+import type {List} from "../../../types";
 
 export const ListCard = (props: {
-                             list: ListItem,
+                             list: List,
                              deleteList: (id: string) => void
                          }
 ) => {
-    const {id, name, elements} = props.list
+    const {id, name, items} = props.list
     const [isOpened, setIsOpened] = useState(false);
     const toggleCard = () => {
         setIsOpened((prev) => !prev)
@@ -47,11 +47,11 @@ export const ListCard = (props: {
         {isOpened && <Box>
             <Separator size={'4'} my={'3'}/>
 
-            {elements.map(element => {
+            {items.map(item => {
                 return <Flex
-                    key={element} gap={'2'} p={'1'} align={'center'}>
+                    key={item.id} gap={'2'} p={'1'} align={'center'}>
                     <Checkbox/>
-                    <Text>{element}</Text>
+                    <Text>{item.name}</Text>
                 </Flex>
             })}</Box>}
     </Card>

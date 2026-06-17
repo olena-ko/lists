@@ -1,3 +1,4 @@
-import type {ListItem} from './ListItem.ts'
+import type {List} from './List.ts'
+import type {ListItem} from "./ListItem.ts";
 
-export type {ListItem}
+export type {List, ListItem}
